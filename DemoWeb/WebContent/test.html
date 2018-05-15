@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function judge(){
+	var candidate_ids=document.getElementsByName('candidate_id');
+	for (var i = 0; i < candidate_ids.length; ++i) {
+		var status = false;
+ 		var _radObj=document.getElementsByName(candidate_ids[i].value);
+	 	for(var j = 0; j < _radObj.length; ++j){
+			if(_radObj[j].checked){
+				status = true;
+			}
+		}
+		if(! status){
+			alert('未选中时间!');
+			return false
+		}
+	}
+	return true;
+}
+</script>
+</head>
+<body>
+<form name="form" action="test.html" onsubmit="return judge()" method="post">
+	<input name="candidate_id" type="hidden" value=1 />
+	<input name=1 type="radio" value=0/>差&nbsp;
+	<input name=1 type="radio" value=1/>一般
+	<input name=1 type="radio" value=2/>好&nbsp; 
+	<label>1</label><br>
+	<input name="candidate_id" type="hidden" value=2 />
+	<input name=2 type="radio" value=0/>差&nbsp;
+	<input name=2 type="radio" value=1/>一般
+	<input name=2 type="radio" value=2/>好&nbsp; 
+	<label>2</label><br>
+<input type="submit" value="Submit"> 
+</form>
+</body>
+</html>
